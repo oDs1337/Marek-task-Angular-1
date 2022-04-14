@@ -11,6 +11,7 @@ export class NavBarComponent implements OnInit {
   name:string = 'Marek';
   currentDate:string = '';
 
+
   fetchCurrentData(){
     const today = new Date();
     return today.getDate() + '.' + (today.getMonth()+1) + '.' + today.getFullYear() + 'r.';
