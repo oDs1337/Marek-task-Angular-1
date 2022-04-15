@@ -1,0 +1,16 @@
+.orderInformations{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.inputTextFields{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.orderSummary{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}

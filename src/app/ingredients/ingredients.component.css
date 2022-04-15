@@ -1,0 +1,10 @@
+.ingredientComponent{
+  display: flex;
+  margin-top: 20px;
+}
+.ingredientName{
+  margin-left: 10px;
+}
+.ingredientPrice{
+  margin-left: 10px;
+}

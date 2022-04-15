@@ -1,0 +1,29 @@
+<div class="orderInformationsComponent">
+  <div class="orderInformations">
+    <div class="inputTextFields">
+      <input id="orderInformations.street" [(ngModel)]="orderInformations.street" placeholder="Street">
+      <input id="orderInformations.apartmentNumber" [(ngModel)]="orderInformations.apartmentNumber" placeholder="Apartment number">
+      <input id="orderInformations.postalCode" [(ngModel)]="orderInformations.postalCode" placeholder="Postal code">
+      <input id="orderInformations.city" [(ngModel)]="orderInformations.city" placeholder="City">
+      <input id="orderInformations.phoneNumber" [(ngModel)]="orderInformations.phoneNumber" placeholder="Phone number">
+    </div>
+    <div class="orderSummary">
+      <h2>Summary:</h2>
+      <div>
+        Street: {{orderInformations.street}}
+      </div>
+      <div>
+        Apartment: {{orderInformations.apartmentNumber}}
+      </div>
+      <div>
+        Postal code: {{orderInformations.postalCode}}
+      </div>
+      <div>
+        City: {{orderInformations.city}}
+      </div>
+      <div>
+        Phone number: {{orderInformations.phoneNumber}}
+      </div>
+    </div>
+  </div>
+</div>
