@@ -1,10 +1,10 @@
 <div class="navBar">
-  <app-nav-bar></app-nav-bar>
+  <app-nav-bar (nameChanged)="name=$event"></app-nav-bar>
 </div>
 <div class="mainMenu">
   <div class="ingredientsMenu">
     <div class="ingredientsWelcomeMessage">
-      Hey! set up your favourite ingredients here!
+      Hey {{name}}! set up your favourite ingredients here!
     </div>
     <div class="ingredientsMenuOfChoice">
       <app-ingredients></app-ingredients>

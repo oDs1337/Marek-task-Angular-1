@@ -1,16 +1,16 @@
-<div *ngFor="let item of ingredientsList">
+<div *ngFor="let item of ingredientsList; let i = index">
   <div class="ingredientComponent">
     <div class="ingredientCounter">
       <input id="item.count" size="1" [(ngModel)]="item.count" placeholder="-">
     </div>
     <div class="ingredientName">
       {{item.name}}
-      <input id="item.name" size="10" [(ngModel)]="item.name" placeholder="item.name">
+      <input id="item.name" size="10" [(ngModel)]="item.name" placeholder="Ingredient name">
     </div>
     <div class="ingredientPrice">
        +{{item.price}}
-       <button ngClick="incrementData(item.count)">+</button>
-       <button ngClick="decrementData(item.count)">-</button>
+       <button (click)="incrementData(i)">+</button>
+       <button (click)="decrementData(i)">-</button>
     </div>
   </div>
 </div>

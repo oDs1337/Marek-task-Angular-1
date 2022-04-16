@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ingredients.component.css']
 })
 export class IngredientsComponent implements OnInit {
-
   ingredientsList = [
     { name: 'Tomato',
       price: '1.30',
@@ -19,21 +18,20 @@ export class IngredientsComponent implements OnInit {
       count: 0,},
       { name: 'Cheese',
       price: '1.00',
-      count: 0,},
+      count: 0,
+    },
   ];
 
-  incrementData(value:number){
-    value++;
-    console.log(value);
-    return value;
+  incrementData(index: number){
+    const value = this.ingredientsList[index];
+    value.count = value.count + 1;
   }
-  decrementData(value:number){
-    value--;
-    console.log(value);
-    return value;
+  decrementData(index: number){
+    const value = this.ingredientsList[index];
+    value.count = value.count - 1;
   }
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }

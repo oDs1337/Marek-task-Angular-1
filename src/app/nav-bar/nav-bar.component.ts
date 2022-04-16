@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,19 +8,29 @@ import { Component, OnInit } from '@angular/core';
 
 export class NavBarComponent implements OnInit {
 
-  name:string = 'Marek';
+  @Output() nameChanged = new EventEmitter<string>()
+
+  nazwajakas = Object.freeze({
+    a:'b',
+  })
+
+  name:string = '';
   currentDate:string = '';
 
+  constructor() { }
+
+  ngOnInit(): void {
+    this.currentDate = this.fetchCurrentData();
+  }
 
   fetchCurrentData(){
     const today = new Date();
     return today.getDate() + '.' + (today.getMonth()+1) + '.' + today.getFullYear() + 'r.';
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.currentDate = this.fetchCurrentData();
+  changeName(value: string){
+    this.nameChanged.emit(value);
+    this.name = value;
   }
 
 }
