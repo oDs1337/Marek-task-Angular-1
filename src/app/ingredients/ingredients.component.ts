@@ -1,5 +1,5 @@
-import { INGREDIENTS } from './../mock-ingredient';
 import { Component, OnInit } from '@angular/core';
+import { IngredientService } from '../ingredient.service';
 import { Ingredient } from '../ingredient';
 
 @Component({
@@ -9,16 +9,20 @@ import { Ingredient } from '../ingredient';
 })
 export class IngredientsComponent implements OnInit {
 
-  ingredientsList = INGREDIENTS;
+  ingredientsList: Ingredient[] = [];
 
   maximumIngredientOrderNumber = 9;
   minimumIngredientOrderNumber = 0;
 
-  constructor() {}
+  constructor(private ingredientService: IngredientService) {}
 
   ngOnInit(): void {
+    this.getIngredients();
   }
 
+  getIngredients(): void{
+    this.ingredientsList = this.ingredientService.getIngredients();
+  }
 
   incrementData(index: number){
     const value = this.ingredientsList[index];
