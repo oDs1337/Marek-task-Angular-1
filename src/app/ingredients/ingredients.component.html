@@ -1,7 +1,7 @@
 <div *ngFor="let item of ingredientsList; let i = index">
   <div class="ingredientComponent">
     <div class="ingredientCounter">
-      <input id="item.count" size="1" [(ngModel)]="item.count" placeholder="-">
+      <input disabled="true" id="item.count" size="1" [(ngModel)]="item.count" placeholder="-">
     </div>
     <div class="ingredientName">
       {{item.name}}
