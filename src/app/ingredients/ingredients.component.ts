@@ -22,6 +22,15 @@ export class IngredientsComponent implements OnInit {
     },
   ];
 
+  maximumIngredientOrderNumber = 9;
+  minimumIngredientOrderNumber = 0;
+
+  constructor() {}
+
+  ngOnInit(): void {
+  }
+
+
   incrementData(index: number){
     const value = this.ingredientsList[index];
     value.count = value.count + 1;
@@ -31,9 +40,5 @@ export class IngredientsComponent implements OnInit {
     value.count = value.count - 1;
   }
 
-  constructor() {}
-
-  ngOnInit(): void {
-  }
 
 }

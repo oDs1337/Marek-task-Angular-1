@@ -9,8 +9,8 @@
     </div>
     <div class="ingredientPrice">
        +{{item.price}}
-       <button (click)="incrementData(i)">+</button>
-       <button (click)="decrementData(i)">-</button>
+       <button [disabled]="item.count>=maximumIngredientOrderNumber" (click)="incrementData(i)">+</button>
+       <button [disabled]="item.count<=minimumIngredientOrderNumber" (click)="decrementData(i)">-</button>
     </div>
   </div>
 </div>
