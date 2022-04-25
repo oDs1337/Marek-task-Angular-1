@@ -21,8 +21,10 @@ export class IngredientsComponent implements OnInit {
   }
 
   getIngredients(): void{
-    this.ingredientService.getIngredients().then((value) => {
-      this.ingredientsList = value;
+    this.ingredientService.getIngredients().then((successfullyFetchedIngredients) => {
+      if(successfullyFetchedIngredients[0].name != ''){
+        this.ingredientsList = successfullyFetchedIngredients;
+      }
     })
   }
 
