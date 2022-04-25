@@ -1,6 +1,6 @@
+import { Ingredient } from './../ingredient';
 import { Component, OnInit } from '@angular/core';
 import { IngredientService } from '../ingredient.service';
-import { Ingredient } from '../ingredient';
 
 @Component({
   selector: 'app-ingredients',
@@ -21,8 +21,11 @@ export class IngredientsComponent implements OnInit {
   }
 
   getIngredients(): void{
-    this.ingredientsList = this.ingredientService.getIngredients();
+    this.ingredientService.getIngredients().then((value) => {
+      this.ingredientsList = value;
+    })
   }
+
 
   incrementData(index: number){
     const value = this.ingredientsList[index];
