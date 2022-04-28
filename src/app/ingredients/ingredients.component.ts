@@ -22,20 +22,18 @@ export class IngredientsComponent implements OnInit {
 
   getIngredients(): void{
     this.ingredientService.getIngredients().then((successfullyFetchedIngredients) => {
-      if(successfullyFetchedIngredients[0].name != ''){
         this.ingredientsList = successfullyFetchedIngredients;
-      }
     })
   }
 
 
   incrementData(index: number){
     const value = this.ingredientsList[index];
-    value.count = value.count + 1;
+    value.count += 1;
   }
   decrementData(index: number){
     const value = this.ingredientsList[index];
-    value.count = value.count - 1;
+    value.count -= 1;
   }
 
 

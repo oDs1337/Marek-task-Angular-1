@@ -13,25 +13,13 @@ export class IngredientService {
 
   getIngredients(): Promise<Ingredient[]>{
 
-    const emptyObject: Ingredient[] = [
-      {
-        name: '',
-        price: '',
-        count: 0,
-      },
-    ];
-
     return new Promise<Ingredient[]>((resolve, reject) => {
       if(INGREDIENTS.length > 0){
         resolve(INGREDIENTS);
       }
       else{
-        reject(emptyObject);
+        reject("error");
       }
-    }).then((successfullyFetchedIngredients) => {
-      return successfullyFetchedIngredients;
-    }).catch((failedToFetchIngredients) => {
-      return failedToFetchIngredients;
     })
   }
 }
